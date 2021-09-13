@@ -1,0 +1,35 @@
+@import "../../CommonStyles/mixins.scss";
+@import "../../CommonStyles/variables.scss";
+
+header {
+    @include flex-container;
+    justify-content: space-between;
+    border-bottom: 1px solid $gray;
+    padding: 0 50px;
+    box-shadow: 0 0 5px $gray;
+    @media(max-width: $mob-width) {
+        padding: 0 20px;
+    }
+    @media(max-width: $mob-width) {
+        padding: 20px;
+    }
+    .leftHeader {
+        @include flex-container;
+        @media(max-width: $mob-width) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        h1 {
+            font-size: 32px;
+            margin-right: 20px;
+            @media(max-width: $mob-width) {
+                font-size: 20px;
+            }
+        }
+    }
+    button {
+        @media(max-width: $mob-width) {
+            font-size: 10px;
+        }
+    }
+}

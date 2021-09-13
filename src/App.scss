@@ -1,0 +1,13 @@
+@import "./CommonStyles/mixins.scss";
+@import "./CommonStyles/variables.scss";
+
+.App {
+  text-align: center;
+}
+
+button {
+  background-color: $cta-blue;
+  color: $white;
+  font-size: 14px;
+  padding: 5px 25px;
+}

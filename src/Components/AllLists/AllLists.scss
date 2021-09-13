@@ -1,0 +1,12 @@
+.listsOuter {
+    overflow-x: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 30px;
+    height: 83vh;
+    &.noLists {
+        justify-content: center;
+        align-items: center;
+    }
+}

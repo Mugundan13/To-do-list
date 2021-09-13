@@ -1,0 +1,75 @@
+@import "../../CommonStyles/variables.scss";
+@import "../../CommonStyles//mixins.scss";
+
+.overlay {
+    position: fixed;
+    background-color: $black;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+.formContent {
+    border: 1px solid $black;
+    padding: 0 0 40px;
+    background-color: $white;
+    width: 30%;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @media(max-width: $tab-width) {
+        width: 50%;
+    }
+    @media(max-width: $mob-width) {
+        width: 80%;
+    }
+    h2 {
+        font-size: 20px;
+        text-align: center;
+        border-bottom: 1px solid $gray;
+        padding-bottom: 15px;
+        margin-bottom: 0;
+    }
+    form {
+        @include flex-container;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 40px;
+        p{
+            text-align: left;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        input {
+            width: 80%;
+            height: 20px;
+            border: 1px solid $cta-blue;
+            border-radius: 3px;
+            @media(max-width: $tab-width) {
+                width: 90%;
+            }
+        }
+        textarea {
+            resize: none;
+            width: 80%;
+            border: 1px solid $cta-blue;
+            border-radius: 3px;
+            @media(max-width: $tab-width) {
+                width: 90%;
+            }
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row-reverse;
+            .cancel {
+                color: $black;
+                background-color: $white;
+                margin-right: 10px;
+            }
+        }
+    }
+}
