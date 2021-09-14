@@ -1,5 +1,6 @@
 const initialState = {
     showListForm: false,
+    newvl: 1,
     showCardForm: {
         show: false,
         listType: ''
@@ -46,8 +47,7 @@ const appReducer = (state = initialState, action) => {
                     {
                         title: action.payload,
                         key: action.payload.trim().replace(/ /g,"-"),
-                        createdOn: new Date().getTime() / 1000,
-                        cardIds: []
+                        createdOn: new Date().getTime() / 1000
                     }
                 ]
             }
@@ -116,6 +116,11 @@ const appReducer = (state = initialState, action) => {
                 allCards: [
                     ...favCards
                 ]
+            }
+        case "SORTBY":
+            return {
+                ...state,
+                sortByType: action.payload
             }
         default:
             return state

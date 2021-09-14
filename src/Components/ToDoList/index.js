@@ -5,9 +5,26 @@ import "./ToDoList.scss";
 import Card from "../Card";
 
 const ToDoList = (props) => {
-
+    let sortBy = useSelector(state => state.sortByType) || 'Time-Descending';
+    console.log(sortBy)
     let cards = useSelector(state => state.allCards.filter((card) => card.listType === props.listDetails.key));
-    cards = cards.sort((a,b) => b.createdOn - a.createdOn)
+    switch(sortBy) {
+        case "Title-Ascending":
+            cards = cards.sort((a,b) => a.title.localeCompare(b.title));
+            break;
+        case "Title-Descending":
+            cards = cards.sort((a,b) => b.title.localeCompare(a.title));
+            break;
+        case "Time-Ascending":
+            cards = cards.sort((a,b) => a.createdOn - b.createdOn);
+            break;
+        case "Time-Descending" :
+            cards = cards.sort((a,b) => b.createdOn - a.createdOn);
+            break;
+        default:
+            cards = cards.sort((a,b) => b.createdOn - a.createdOn);
+    }
+
     const dispatch = useDispatch();
 
     const showCardForm = () => {
